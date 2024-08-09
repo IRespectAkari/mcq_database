@@ -1,0 +1,74 @@
+html {
+  margin: 5px;
+}
+
+body {
+  width: 28em;
+  font-size: 12px;
+}
+
+#target {
+  display: flex;
+  justify-content: space-around;
+}
+
+td#targetExplanation {
+  width: 8em;
+}
+
+#calc tr > td:nth-child(2) {
+  padding-right: 5px;
+}
+
+#calc tr > td:nth-child(3) > * {
+  width: 5em;
+}
+
+#calc input#probability {
+  width: 6.5em;
+}
+
+div#version {
+  text-align: right;
+}
+
+/* ----------------- */
+table {
+  margin: 3px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#todaysHoraanaTable table *,
+#nextHoraanaTable table *,
+#secretExplanation table * {
+  border: 1px solid black;
+}
+
+#todaysHoraanaTable caption, #nextHoraanaTable caption {
+  border: none;
+}
+
+.motimono {
+  width: 110px;
+  text-align: center;
+}
+
+.housyuu {
+  width: 150px;
+}
+
+.teki {
+  width: 280px;
+}
+
+#secretExplanation table tr td:nth-child(1) {
+  width: 80px;
+}
+
+select#secretSearch:before {
+  content: "場所：";
+  position: relative;
+  width: 50px;
+  display: block;
+}
