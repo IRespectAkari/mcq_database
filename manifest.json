@@ -1,7 +1,7 @@
 {
   "name": "MCQ DataBase",
   "description": "ミチクエに関する様々な情報が集積しています。",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "manifest_version": 3,
   "action": {
     "default_title": "Milkchoco QUEST DataBase",
