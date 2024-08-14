@@ -19,7 +19,7 @@ const SecretBossData = [
     requiredItem: "秘密の石板",
     reward: {
       gold: ["錬金の古文書"],
-      silver: ["石化の指輪[指輪]"],
+      silver: ["石化の眼[その他]"],
       copper: ["守護の指輪[指輪]"],
       another: ["銀", "銅", "ミスリル", "魔石", "砥石", "上質砥石", "強化石", "錬成石"]
     },
