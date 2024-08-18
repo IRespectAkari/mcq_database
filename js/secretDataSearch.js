@@ -52,7 +52,7 @@ const SecretBossData = [
     skills: ["通常攻撃強化", "連続攻撃", "炎攻撃"]
   },
 ];
-/* ################################################################## */
+
 const tableTemplate = (e)=>`<table>
   <tbody>
     <tr>
@@ -94,11 +94,13 @@ const tableTemplate = (e)=>`<table>
   </tbody>
 </table>`;
 /* ################################################################## */
+
 const secretBossSelector = document.getElementById(`secretSearch`);
 const secretBossExplanator = document.getElementById(`secretExplanation`);
 createSelectorOptions();// 初期化
 secretBossSelector.addEventListener(`change`, searchFunction);
 secretBossSelector.dispatchEvent(new Event(`change`));
+
 /* ################################################################## */
 // table初期化 -> select内容取得 -> option名のデータ取得 -> table生成
 function searchFunction(e) {
@@ -109,13 +111,11 @@ function searchFunction(e) {
 
   secretBossExplanator.innerHTML = tableTemplate(data);
 }
-/* ################################################################## */
 function createSelectorOptions() {
   SecretBossData.forEach(e=>{
     secretBossSelector.appendChild(createAndSetT(`option`, e.place));
   });
 }
-/* ################################################################## */
 function createAndSetT(elm, txt) {
   const E = document.createElement(elm);
   E.innerText = txt;
