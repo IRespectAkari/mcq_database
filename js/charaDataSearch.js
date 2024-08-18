@@ -134,18 +134,18 @@ function searchFunction(e) {
   const selectName = e.target.selectedOptions[0].textContent;
   const data = charaData.find(e=>e.name===selectName);
 
-  charaExplanator.appendChild(createAndSet(`div`, data.ability));
+  charaExplanator.appendChild(createAndSetT(`div`, data.ability));
 
   const skl = document.createElement(`ul`);
-  data.skills.forEach(text=>skl.appendChild(createAndSet(`li`, text)));
+  data.skills.forEach(text=>skl.appendChild(createAndSetT(`li`, text)));
   charaExplanator.appendChild(skl);
 }
 
 function createSelectorOptions() {
-  charaData.forEach(e=>charaSelector.appendChild(createAndSet(`option`, e.name)));
+  charaData.forEach(e=>charaSelector.appendChild(createAndSetT(`option`, e.name)));
 }
 
-function createAndSet(elm, txt) {
+function createAndSetT(elm, txt) {
   const E = document.createElement(elm);
   E.innerText = txt;
   return E;
