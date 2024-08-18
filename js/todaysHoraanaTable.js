@@ -61,16 +61,14 @@ function tableCreator() {
 
     var table = document.createElement("table");
     // 表のキャプション（見出し）追加
-    var cap = document.createElement("caption");
-    cap.innerHTML = `${capText} (${addData.youbi})`;
+    var cap = createAndSetH("caption", `${capText} (${addData.youbi})`);
     table.appendChild(cap);
 
     var tr = document.createElement("tr");
 
     // 見出しセルの書き込み
     for (let i = 0; i < 3; i++) {
-      var th = document.createElement("th");
-      th.innerHTML = midasi[i];
+      var th = createAndSetH("th", midasi[i]);
       th.classList.add(classes[i]);
       tr.appendChild(th);
     }
@@ -80,8 +78,7 @@ function tableCreator() {
     for (let e of addData.details) {
       var tr = document.createElement("tr");
       for (let i = 0; i < 3; i++) {
-        var td = document.createElement("td");
-        td.innerHTML = e[i];
+        var td = createAndSetH("td", e[i]);
         // e[i] が「-」の時だけ、cssのboldを付与する。
         if (e[i] === "-") {
           td.style.fontWeight = "bold";
@@ -145,3 +142,9 @@ addEventListener("load", tableCreator);
 // const tommorowFromNow = ()=>nextDay - nowTime.getTime();
 
 // setTimeout(tableCreator(), tommorowFromNow);
+
+function createAndSetH(elm, txt) {
+  const E = document.createElement(elm);
+  E.innerHTML = txt;
+  return E;
+}
