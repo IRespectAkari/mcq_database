@@ -109,21 +109,21 @@ function searchFunction(e) {
 console.log(selectName);
 console.log(data);
   secretBossExplanator.innerHTML = tableTemplate(data);
-  // secretBossExplanator.appendChild(createAndSet(`div`, data.name));
+  // secretBossExplanator.appendChild(createAndSetT(`div`, data.name));
 
   // const skl = document.createElement(`ul`);
-  // data.skills.forEach(text=>skl.appendChild(createAndSet(`li`, text)));
+  // data.skills.forEach(text=>skl.appendChild(createAndSetT(`li`, text)));
   // secretBossExplanator.appendChild(skl);
 }
 
 function createSelectorOptions() {
   SecretBossData.forEach(e=>{
-    secretBossSelector.appendChild(createAndSet(`option`, e.place));
+    secretBossSelector.appendChild(createAndSetT(`option`, e.place));
   });
 }
 
 
-function createAndSet(elm, txt) {
+function createAndSetT(elm, txt) {
   const E = document.createElement(elm);
   E.innerText = txt;
   return E;
