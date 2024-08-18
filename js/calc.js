@@ -18,8 +18,8 @@ const luck = [
 
 const luckRate = 165;//      幸運の倍率(1.65)
 const greadLuckRate = 180;// 豪運の倍率(1.8)
-const guidanceRate = 13;//  錬金の手引きの倍率(1.3)
-const conditionRate = 12;// 状態異常：幸運の倍率(1.2)
+const guidanceRate = 13;//   錬金の手引きの倍率(1.3)
+const conditionRate = 12;//  状態異常：幸運の倍率(1.2)
 const luckAbilityRate = (i)=>{return `1${i}`};// 幸運のお守りの倍率(1.0 ~ 1.9)
 
 // 能力値の取りうる値の配列
