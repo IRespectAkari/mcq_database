@@ -9,6 +9,12 @@ body {
   font-size: 0.9rem;
   margin: 5px;
 }
+div#version {
+  text-align: right;
+}
+footer {
+  font-size: 0.8rem;
+}
 
 label:has([disabled]){
   text-decoration: line-through;
