@@ -1,0 +1,176 @@
+* {
+  /* background-color: gray; */
+}
+:root {
+  --base-width: 350px;
+}
+body {
+  width: var(--base-width);
+  font-size: 0.9rem;
+  margin: 5px;
+}
+
+label:has([disabled]){
+  text-decoration: line-through;
+  /* color: gray; */
+}
+label:has([disabled]):hover {
+  background-color: initial !important;
+  border-bottom: 0 !important;
+  color: #424242 !important;
+  font-weight: normal !important;
+  /* font-weight: 0; */
+}
+
+/* flexで等幅 => flex: 1
+ *  */
+.flx {
+  display: flex;
+  flex-direction: row;
+}
+.flx > label {
+  flex: 1;
+}
+label:has(input[type=radio]) {
+  cursor: pointer;
+  text-align: center;
+}
+
+
+/* tabChange */
+header#switchBtn:has( input#horaana:not(:checked)) ~ div#main > #horaanaBase,
+header#switchBtn:has( input#character:not(:checked)) ~ div#main > #characterBase,
+header#switchBtn:has( input#secretboss:not(:checked)) ~ div#main > #secretbossBase,
+header#switchBtn:has( input#alchemy:not(:checked)) ~ div#main > #alchemyBase,
+header#switchBtn:has( input#item:not(:checked)) ~ div#main > #itemBase {
+  display: none;
+}
+/* ↑または↓ */
+/* div#main > div {
+  display: none;
+}
+header#switchBtn:has( input#horaana:checked) ~ div#main > #horaanaBase,
+header#switchBtn:has( input#character:checked) ~ div#main > #characterBase,
+header#switchBtn:has( input#secretboss:checked) ~ div#main > #secretbossBase,
+header#switchBtn:has( input#item:checked) ~ div#main > #itemBase {
+  display: block;
+} */
+/* tabChange end */
+
+/* base の枠 */
+.base {
+  border: solid 1px black;
+}
+
+/* radioStyle */
+#switchBtn,
+#horaanaSwitchBtn {
+  border: solid 1px black;
+}
+label:not(:last-child) {
+  border-right: solid 1px lightgray;
+}
+label:has(input[type=radio]) {
+  color: #424242;
+}
+
+/* ホバー時変化 */
+label:has(input[type=radio]) {}
+label:has(input[type=radio]) {
+}
+
+
+/* ホバー、選択時 */
+label:has(input[type=radio]):hover,
+label:has( > input[type=radio]:checked:not([disabled])) {
+  background-color: #b5b5b5;
+  border-bottom: solid 2px black;
+  color: black;
+  font-weight: bold;
+}
+input[type=radio] {
+  display: none;
+}
+/* radioStyle end */
+
+/* table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.8rem;
+  word-break: auto-phrase;
+}
+table * {
+  border: solid 1px black;
+}
+table#horaanaTable th:nth-child(1) {
+  width: 80px;
+}
+table#horaanaTable th:nth-child(3) {
+  width: 160px;
+}
+table#horaanaTable td:nth-child(1) {
+  text-align: center;
+}
+/* table end */
+
+/* ほら穴tableの切り替え */
+header#horaanaSwitchBtn:has(input.sun:not(:checked)) ~ table > tbody.sun,
+header#horaanaSwitchBtn:has(input.mon:not(:checked)) ~ table > tbody.mon,
+header#horaanaSwitchBtn:has(input.tue:not(:checked)) ~ table > tbody.tue,
+header#horaanaSwitchBtn:has(input.wed:not(:checked)) ~ table > tbody.wed,
+header#horaanaSwitchBtn:has(input.thu:not(:checked)) ~ table > tbody.thu,
+header#horaanaSwitchBtn:has(input.fri:not(:checked)) ~ table > tbody.fri,
+header#horaanaSwitchBtn:has(input.sat:not(:checked)) ~ table > tbody.sat {
+  display: none;
+}
+/* ほら穴tableの切り替え end */
+
+/* 錬金術 */
+#alchemyBase > #target > span {
+  padding: 0 10px;
+}
+#calc tr > td:nth-child(1) {
+  width: 110px;
+  padding-left: 2px;
+}
+#calc tr > td:nth-child(2) {
+  padding-right: 5px;
+}
+
+#calc tr > td:nth-child(3) > * {
+  width: 6em;
+}
+
+#calc input#probability {
+  width: 9em;
+}
+
+#calc label:has(input[type=radio]) {
+  padding: 0 10px;
+}
+/* 錬金術 end */
+
+/* キャラ検索 */
+thead#abilities th:nth-child(1),
+thead#abilities th:nth-child(2),
+thead#abilities th:nth-child(3) {
+  width: 90px;
+}
+thead#abilities th:nth-child(4),
+thead#abilities th:nth-child(5) {
+  padding: 0 1em;
+  width: 20px;
+}
+thead#abilities + tbody td:nth-child(4),
+thead#abilities + tbody td:nth-child(5) {
+  padding: 0;
+  font-size: 1.1em;
+}
+thead#abilities + tbody td {
+  text-align: center;
+}
+thead#skills + tbody td {
+  padding: 0 1 1px 5px;
+}
+/* キャラ検索 end */

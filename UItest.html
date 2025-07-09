@@ -1,0 +1,205 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="UIstyletest.css">
+    <link rel="stylesheet" href="UItestStyle_boss.css">
+    <script src="utils.js" defer></script>
+    <script src="UItestHoraana.js" defer></script>
+    <script src="UItestCharaSearch.js" defer></script>
+    <script src="UItestAlchemy.js" defer></script>
+    <script src="UItestSecretBoss.js" defer></script>
+  </head>
+  <body>
+    <header id="switchBtn" class="flx">
+      <label>
+        <input type="radio" name="tabs" id="horaana" checked>ほら穴
+      </label>
+      <label>
+        <input type="radio" name="tabs" id="character">キャラ
+      </label>
+      <label>
+        <input type="radio" name="tabs" id="secretboss">隠しボス
+      </label>
+      <label>
+        <input type="radio" name="tabs" id="alchemy">錬金術
+      </label>
+      <label>
+        <input type="radio" name="tabs" id="item" disabled>アイテム
+      </label>
+    </header>
+    <div id="main">
+      <div id="horaanaBase">
+        <header id="horaanaSwitchBtn" class="flx">
+          <label>
+            <input type="radio" name="week" class="sun" checked>日
+          </label>
+          <label>
+            <input type="radio" name="week" class="mon">月
+          </label>
+          <label>
+            <input type="radio" name="week" class="tue">火
+          </label>
+          <label>
+            <input type="radio" name="week" class="wed">水
+          </label>
+          <label>
+            <input type="radio" name="week" class="thu">木
+          </label>
+          <label>
+            <input type="radio" name="week" class="fri">金
+          </label>
+          <label>
+            <input type="radio" name="week" class="sat">土
+          </label>
+        </header>
+        <table id="horaanaTable">
+          <thead>
+            <tr><th>持ち物</th><th>報酬</th><th>敵</th></tr>
+          </thead>
+        </table>
+      </div>
+      <div id="characterBase" class="base">
+        <select id="charaSelect"></select>
+        <table id="charaExplanation">
+          <thead id="abilities">
+            <tr>
+              <th>カテゴリ1</th>
+              <th>カテゴリ2</th>
+              <th>ランク</th>
+              <th>剣</th>
+              <th>杖</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr></tr>
+          </tbody>
+          <!-- <tbody id="jobChange">
+            <tr>
+              <td>転職元</td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td>転職先</td>
+              <td colspan="4"></td>
+            </tr>
+          </tbody> -->
+          <thead id="skills">
+            <tr>
+              <th colspan="5">スキル</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="secretbossBase" class="base">
+        <!-- <select id="secretSelect"></select> -->
+        <select id="secretSearch"></select>
+        <div id="secretExplanation"></div>
+      </div>
+      <div id="alchemyBase">
+        <div id="target" class="flx">
+          <span>モード</span>
+          <label>
+            <input type="radio" name="targetRadio" value="Accessory" checked>装飾
+          </label>
+          <label>
+            <input type="radio" name="targetRadio" value="Item">アイテム
+          </label>
+        </div>
+        <form id="calc">
+          <table>
+            <tr>
+              <td id="targetExplanation">強化前の能力値</td>
+              <td>
+                <select id="targetSelectbox" class="Input"></select>
+              </td>
+              <td>
+                <input id="targetSelectboxRatio" type="text" readonly value="0">
+              </td>
+            </tr>
+            <tr>
+              <td>ヒーロー</td>
+              <td>
+                <select id="chara" class="Input"></select>
+              </td>
+              <td>
+                <input id="charaRatio" type="text" readonly value="0">
+              </td>
+            </tr>
+            <tr>
+              <td>幸運のお守り</td>
+              <td>
+                <select id="luckAbility" class="Input"></select>
+              </td>
+              <td>
+                <input id="luckAbilityRatio" type="text" readonly value="0">
+              </td>
+            </tr>
+            <tr>
+              <td>錬金の手引き</td>
+              <td>
+                <label>
+                  <!-- <input type="radio" name="guidance" value="true" class="Input guidance">オン -->
+                  <input type="radio" name="guidance" class="Input guidance">オン
+                </label>
+                <label>
+                  <!-- <input type="radio" name="guidance" value="false" class="Input guidance" checked>オフ -->
+                  <input type="radio" name="guidance" class="Input guidance" checked value="10">オフ
+                </label>
+              </td>
+              <td>
+                <input id="guidanceRatio" type="text" readonly value="0">
+              </td>
+            </tr>
+            <tr>
+              <td>賢者の手記</td>
+              <td>
+                <label>
+                  <input type="radio" name="notes" class="Input notes">オン
+                </label>
+                <label>
+                  <input type="radio" name="notes" class="Input notes" checked value="10">オフ
+                </label>
+              </td>
+              <td>
+                <input id="notesRatio" type="text" readonly value="0">
+              </td>
+            </tr>
+            <tr>
+              <td>幸運</td>
+              <td>
+                <label>
+                  <input type="radio" name="condition" value="true" class="Input condition">オン
+                </label>
+                <label>
+                  <input type="radio" name="condition" value="false" class="Input condition" checked>オフ
+                </label>
+              </td>
+              <td>
+                <input id="conditionRatio" type="text" readonly value="0">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" id="hr"></td>
+            </tr>
+            <tr>
+              <td>成功確率</td>
+              <td>
+                <input id="probability" type="text" readonly value="">
+              </td>
+              <td>
+                <input id="probabilityRatio" type="text" readonly value="0">
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div id="itemBase" class="base">
+        <label>
+          <input type="text"placeholder="アイテム名を入力">
+        </label>
+        <div id="itemExplanation">アイテム説明欄</div>
+      </div>
+    </div>
+  </body>
+</html>
