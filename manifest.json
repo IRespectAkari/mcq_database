@@ -5,6 +5,6 @@
   "manifest_version": 3,
   "action": {
     "default_title": "Milkchoco QUEST DataBase",
-    "default_popup": "UItest.html"
+    "default_popup": "index.html"
   }
 }
